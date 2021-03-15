@@ -1,0 +1,79 @@
+<div class="container-fluid">
+  <nav class="menu">
+    <div class="row">
+      <div class="col-10 col-md-6 col-lg-8 offset-lg-2">
+        <ul>
+          <li>
+            <a class="navbar-brand" [routerLink]="['/']">
+              <img src="/assets/image/main-logo.png" alt="">
+            </a>
+          </li>
+          <li class="nav-item">
+            <a [routerLink]="['/']">Home</a>
+          </li>
+          <li class="nav-item">
+            <a [routerLink]="['/category']">Products</a>
+          </li>
+          <li class="nav-item">
+            <a [routerLink]="['/contact']">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-2 col-md-2 offset-md-4 col-lg-2 offset-lg-0">
+        <ul>
+          <li class="nav-item">
+            <a (click)="showCart = !showCart;" style="cursor: pointer;">
+              <fa-icon [icon]="faShoppingCart" size="1x" class="icon mt-5 mb-5"></fa-icon>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="col-10 offset-1 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-4 col-xl-4 offset-xl-4">
+    <ul>
+      <div *ngIf="showCart">
+        <div *ngIf="cartData.data[0].numInCart !== 0">
+          <div class="bg-cart">
+            <div class="card-body">
+              <div class="product-area">
+                <div *ngFor="let c of cartData.data; let i=index">
+                  <div class="row">
+                    <div class="col-4">
+                      <img src="{{c.product?.img1}}" alt="" width="70%">
+                    </div>
+                    <div class="col-6">
+                      <div class="product-name">{{c.product?.name}}</div>
+                      <div>Qty: {{c.numInCart}}</div>
+                      <div class="product-price">{{c.product?.price |
+                        currency:'USD'}}</div>
+                    </div>
+                    <div class="col-2">
+                      <a (click)="cartService.DeleteProductFromCart(i)">
+                        <fa-icon [icon]="faTrash" size="1x" class="icon mt-5 mb-5"></fa-icon>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="line">
+                <div class="row cart-summary text-center mt-1">
+                  <div class="col-3">
+                    <p>TOTAL:</p>
+                  </div>
+                  <div class="col-3">
+                    <p class="product-price">{{cartTotal | currency:'USD'}}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="line">
+                <button [routerLink]="['/cart']" class="btn-view-cart" (click)="showCart = !showCart;">View
+                  Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ul>
+  </div>
+</div>

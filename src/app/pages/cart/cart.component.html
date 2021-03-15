@@ -1,0 +1,73 @@
+<div class="container">
+  <div class="text-center my-5" *ngIf="cartData.data[0].numInCart===0;">
+    <h4>Your cart is empty</h4>
+    <button class="btn btn-outline-dark btn-lg mt-3" routerLink="/category">GO TO PRODUCTS</button>
+  </div>
+  <div *ngIf="cartData.data[0].numInCart !== 0">
+    <div class="row">
+      <div class="col-12">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class="table-dark">
+              <tr class="text-center">
+                <th>Image</th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>SubTotal</th>
+                <th>Remove</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor=" let c of cartData.data; let i=index;">
+                <td class="text-center">
+                  <img src={{c.product.img1}} style="width: 70px; height: auto;" alt={{c.product.name}}>
+                </td>
+                <td class="text-center">{{c.product.name}}</td>
+                <td class="text-center">{{c.product.price |
+                  currency:'USD'}}</td>
+                <td class="text-center">
+                  <form>
+                    <div class="btn btn-outline-dark icon" (click)="ChangeQuantity(i,false)">
+                      <fa-icon [icon]="faMinus" size="xs"></fa-icon>
+                    </div>
+                    <input class="text-center" type="number" [value]="c.numInCart" readonly />
+                    <div class="btn btn-outline-dark icon" (click)="ChangeQuantity(i,true)">
+                      <fa-icon [icon]="faPlus" size="xs"></fa-icon>
+                    </div>
+                  </form>
+                </td>
+                <td class="text-center">
+                  <p>{{cartService.CalculateSubTotal(i) | currency:'USD'}}</p>
+                </td>
+                <td class="text-center">
+                  <a (click)="cartService.DeleteProductFromCart(i)">
+                    <fa-icon [icon]="faTrashAlt" size="2x" class="icon mt-5 mb-5" style="cursor: pointer;"></fa-icon>
+                  </a>
+                </td>
+              </tr>
+
+              <tr class="border-0">
+                <td style="border: none;"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="text-center">TOTAL</td>
+                <td class="text-center">{{cartTotal | currency:'USD'}}</td>
+              </tr>
+
+              <tr class="border-0">
+                <td style="border: none;"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="text-center"><button class="btn btn-checkout">CHECKOUT</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

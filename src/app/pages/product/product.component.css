@@ -1,0 +1,29 @@
+.thumb-img {
+  width: 100%;
+  height: auto;
+  padding: 20px;
+}
+
+.product-img {
+  width: 100%;
+  height: auto;
+  padding: 50px;
+}
+
+.line {
+  padding: 40px 0 40px;
+  border-top: 1px solid #30363c;
+  text-align: center;
+  color: black;
+}
+
+.btn-add-to-cart {
+  text-transform: uppercase;
+  border-radius: 2px;
+  width: 70%;
+  font-size: 80%;
+}
+
+.icon {
+  border: none;
+}

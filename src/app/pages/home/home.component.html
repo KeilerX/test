@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="500">
+      <div class="carousel-inner">
+        <div *ngFor="let pic of pics;let i=index; first as isFirst">
+          <div [ngClass]="isFirst ? 'carousel-item active' : 'carousel-item' ">
+            <img src={{pic}} class="d-block w-100" alt="...">
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <h3 class="welcome-title text-center">Welcome To Belly</h3>
+    </div>
+    <div class="col-12 text-center">
+      <h2 class="welcome-subtitle">Who Are The Best</h2>
+    </div>
+    <div class="text-center">
+      <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel
+        illum dolore eu
+        feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril
+        delenit augue duis dolore te feugait.</p>
+      <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming.</p>
+    </div>
+    <img src="/assets/image/banner/welcome-image.jpg" class="img-fluid mx-auto d-block py-4" alt="">
+  </div>
+</div>
+<div class="review-position">
+  <img src="/assets/image/bg-images/home-4/testimonial-bg.png" class="img-fluid" alt="">
+</div>

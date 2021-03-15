@@ -1,0 +1,16 @@
+.products-display {
+  -webkit-columns: 3;
+  -moz-columns: 3;
+  columns: 3;
+}
+
+.price-color {
+  color: #B3936D;
+}
+
+.btn-add-to-cart {
+  text-transform: uppercase;
+  border-radius: 2px;
+  width: 70%;
+  font-size: 80%;
+}

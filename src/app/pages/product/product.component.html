@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-5">
+      <div class="row">
+        <img src={{mainImg}} class="product-img" alt="">
+      </div>
+      <div class="row">
+        <div class="col-4" (click)="selectImage(product.img1)" style="cursor: pointer;">
+          <img src={{product.img1}} class="thumb-img" alt="">
+        </div>
+        <div class="col-4" (click)="selectImage(product.img2)" style="cursor: pointer;">
+          <img src={{product.img2}} class=" thumb-img" alt="">
+        </div>
+        <div class="col-4" (click)="selectImage(product.img3)" style="cursor: pointer;">
+          <img src={{product.img3}} class=" thumb-img" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-7">
+      <div style="padding: 50px;">
+        <h3>{{product.name}}</h3>
+        <h5 style="color: #bb6b03;">{{product.price |
+          currency:'USD'}}</h5>
+        <h5>Ex Tax: {{product.priceNoTax |
+          currency:'USD'}}</h5>
+        <h5>Brands: {{product.brands}}</h5>
+        <h5>SKU: {{product.sku}}</h5>
+        <h5>Aviability: {{product.aviability}}</h5>
+        <div class="line">
+          <p>{{product.description.substr(0,150)}}...</p>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <form>
+              <div class="btn btn-outline-dark icon" (click)="Decrease()">
+                <fa-icon [icon]="faMinus" size="xs"></fa-icon>
+              </div>
+              <input class="text-center" type="number" [min]="0" value={{quantity}} readonly />
+              <div class="btn btn-outline-dark icon" (click)="Increase()">
+                <fa-icon [icon]="faPlus" size="xs"></fa-icon>
+              </div>
+            </form>
+          </div>
+          <div class="col-6">
+            <button class="btn-add-to-cart btn btn-outline-dark py-3" (click)="AddToCart(product.id)">add to
+              cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="text-center py-5">
+        <h3>Description</h3>
+        <p>{{product.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>

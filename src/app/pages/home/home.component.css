@@ -1,0 +1,17 @@
+.welcome-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 30px;
+  color: #B3936D;
+  margin-top: 20px;
+}
+
+.welcome-subtitle {
+  font-size: 30px;
+  color: black;
+  font-family: 'Prata', serif;
+  margin: 10px 0;
+}
+
+.review-position {
+  margin-bottom: -2px;
+}

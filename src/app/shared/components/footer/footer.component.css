@@ -1,0 +1,15 @@
+.site-footer {
+  background-color: #14191e;
+  color: #d4d4d4;
+}
+
+.icon {
+  margin: 0 5px;
+}
+
+.line {
+  padding: 40px 0 40px;
+  border-top: 1px solid #30363c;
+  text-align: center;
+  color: #d4d4d4;
+}

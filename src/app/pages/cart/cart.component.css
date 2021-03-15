@@ -1,0 +1,21 @@
+.btn-value {
+  color: black;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.icon {
+  border: none;
+}
+
+.summary {
+  border: solid 1px gray;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.btn-checkout {
+  background-color: #bb6b03;
+  color: #fff;
+  border: 1px solid #fff;
+}
